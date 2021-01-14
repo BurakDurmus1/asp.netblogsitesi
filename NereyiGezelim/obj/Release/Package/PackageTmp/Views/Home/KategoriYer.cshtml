@@ -1,0 +1,17 @@
+﻿@model IEnumerable<NereyiGezelim.Models.yer>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "KategoriMakale";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    @Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(y => y.kategori.kategoriadi).Titled("Kategori Adı").SetWidth(110).Sortable(true);
+    columns.Add(y => y.baslik).Titled("Başlık").Sortable(true);
+    columns.Add(y => y.tarih).Titled("Tarih").Sortable(true);
+    columns.Add(y => y.okunma).Titled("Okunma").Sortable(true);
+
+}).WithPaging(3)
+</div>

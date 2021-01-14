@@ -1,0 +1,21 @@
+﻿@model IEnumerable<NereyiGezelim.Models.yer>
+
+@{
+    Layout = null;
+}
+
+
+
+<h4>Popüler Yerler</h4>
+
+<div class="row">
+    <div class="col-lg-12">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li> <a href="/Home/YerDetay/@item.yerid"> @item.baslik</a> (@item.okunma)</li>
+            }
+        </ul>
+    </div>
+
+</div>

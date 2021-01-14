@@ -1,0 +1,67 @@
+﻿@model NereyiGezelim.Models.uye
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h4>Profil</h4>
+    <hr />
+    <dl class="dl-horizontal col-md-8">
+        <dt>
+            @Html.DisplayNameFor(model => model.yetki.yetki1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yetki.yetki1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kullaniciadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kullaniciadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sifre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sifre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adsoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adsoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.foto)
+        </dt>
+
+        <dd>
+           <img src="@Model.foto" class="img-circle img-responsive" alt="@Model.adsoyad"/>
+        </dd>
+        <p>
+            @Html.ActionLink("Güncelle", "Edit", new { id = Model.uyeid }) |
+
+        </p>
+
+    </dl>
+</div>

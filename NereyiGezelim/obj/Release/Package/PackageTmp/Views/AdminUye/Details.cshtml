@@ -1,0 +1,67 @@
+﻿@model NereyiGezelim.Models.uye
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>uye</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.yetki.yetki1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yetki.yetki1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kullaniciadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kullaniciadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sifre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sifre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adsoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adsoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.foto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.uyeid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

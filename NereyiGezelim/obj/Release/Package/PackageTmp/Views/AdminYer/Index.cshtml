@@ -1,0 +1,74 @@
+﻿@model IEnumerable<NereyiGezelim.Models.yer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Yerler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Yer", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Kategori Adı ")
+        </th>
+        <th>
+            @Html.Label("Kullanıcı Adı")      
+          </th>
+        <th>
+            @Html.Label("Başlık")   
+             </th>
+        <th>
+            @Html.Label(";çerik")
+                </th>
+        <th>
+            @Html.Label("Resim")
+        </th>
+        <th>
+            @Html.Label("Tarih")
+        </th>
+        <th>
+            @Html.Label("Okunma")
+                </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.kategori.kategoriadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.uye.kullaniciadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.baslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.icerik)
+        </td>
+
+        <td>
+            <img width="75" src="@item.foto"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.okunma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.begenme)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.yerid }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.yerid })
+        </td>
+    </tr>
+}
+
+</table>
