@@ -1,0 +1,57 @@
+﻿@model NereyiGezelim.Models.yorum
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Yorum Sil</h2>
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>yorum</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           @Html.Label("Kullanıcı Adı :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uye.kullaniciadi)
+        </dd>
+
+        <dt>
+            @Html.Label("Başlık Adı :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yer.baslik)
+        </dd>
+
+        <dt>
+           @Html.Label("İçerik :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.icerik)
+        </dd>
+
+        <dt>
+           @Html.Label("Tarih :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tarih)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Geri Dön", "Index")
+        </div>
+    }
+</div>

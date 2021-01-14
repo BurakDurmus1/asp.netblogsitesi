@@ -1,0 +1,54 @@
+﻿@model IEnumerable<NereyiGezelim.Models.yer>
+
+@{
+    ViewBag.Title = "BlogAra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Aradığınızı İçeren Yerler</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.kategori.kategoriadi)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.baslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.okunma)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.kategori.kategoriadi)
+        </td>
+        
+        <td>
+            <a href="/Home/YerDetay/@item.yerid">  @Html.DisplayFor(modelItem => item.baslik)</a>
+        </td>
+        
+        <td>
+           <img class="img-rounded img-responsive" width="75" src="@item.begenme" alt="@item.baslik" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.okunma)
+        </td>
+      
+    </tr>
+}
+
+</table>

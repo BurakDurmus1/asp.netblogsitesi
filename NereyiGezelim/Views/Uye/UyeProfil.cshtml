@@ -1,0 +1,61 @@
+﻿@model NereyiGezelim.Models.uye
+
+@{
+    ViewBag.Title = "UyeProfil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Profil</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Yetki ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yetki.yetki1)
+        </dd>
+
+        <dt>
+            @Html.Label("Kullanıcı Adı")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kullaniciadi)
+        </dd>
+
+        <dt>
+            @Html.Label("E-mail ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+       
+
+        <dt>
+            @Html.Label("Ad Soyad")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adsoyad)
+        </dd>
+
+        <dt>
+            @Html.Label("Fotoğraf")
+        </dt>
+
+        <dd>
+            <img src="@Model.foto" width="75" class="img-circle" alt="@Model.adsoyad"/>
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Geri Dön", "Index")
+</p>
